@@ -23,6 +23,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use bootstrap and fonts awesome icons
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'font-awesome-sass', '~> 4.7'
+gem 'bootstrap-sass-extras', '~> 0.0.2'
+
+# Authenticate with devise
+gem 'devise', '~> 4.2'
+
+# For the youtube
+gem 'yt', '~> 0.25.23'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
