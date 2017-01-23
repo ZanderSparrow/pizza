@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,9 +32,6 @@ gem 'devise', '~> 4.2'
 # For the youtube
 gem 'yt', '~> 0.25.23'
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-
 # Make forms easier
 gem 'simple_form'
 
@@ -57,8 +52,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'sqlite3'
 end
 
 group :production do
-
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'pg', '~> 0.19.0'
 end
