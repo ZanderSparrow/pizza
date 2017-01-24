@@ -4,7 +4,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.string :thumbnail
-      t.string :id
+      t.string :video_id
       t.string :description
       t.string :tags
 
