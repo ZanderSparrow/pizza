@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @videos = Video.order('created_at DESC')
   end
 
   # GET /videos/1
@@ -14,7 +14,6 @@ class VideosController < ApplicationController
 
   # GET /videos/new
   def new
-    @video = current_user.videos.build
   end
 
   # GET /videos/1/edit
@@ -25,15 +24,11 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = current_user.videos.build(video_params)
-
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
-        format.json { render :show, status: :created, location: @video }
-      else
-        format.html { render :new }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
-      end
+    if @video.save
+      flash[:success] = 'Video added!'
+      redirect_to root_url
+    else
+      render :new
     end
   end
 
@@ -69,6 +64,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:title, :url, :thumbnail, :id, :description, :tags)
+      params.require(:video).permit(:url)
     end
 end

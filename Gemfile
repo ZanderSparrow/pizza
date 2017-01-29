@@ -35,6 +35,9 @@ gem 'yt', '~> 0.25.23'
 # Make forms easier
 gem 'simple_form'
 
+gem 'autoprefixer-rails'
+gem 'rails-observers'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
